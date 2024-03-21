@@ -10,3 +10,18 @@ eureka:
 
 server:
   port: 8085
+
+#Configuraciones de conexión a la bd
+spring:
+  datasource:
+    username: aldo
+    password: mamani
+    url: jdbc:mysql://localhost:3306/accountdb
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: false
+    defer-datasource-initialization: true    
