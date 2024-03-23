@@ -9,4 +9,4 @@ eureka:
     hostname: localhost
 
 server:
-  port: 9080
+  port: 9081
