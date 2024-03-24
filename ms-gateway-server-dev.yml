@@ -34,7 +34,7 @@ spring:
         - id : ms-customer-management
           uri: lb://ms-customer-management
           predicates:
-            - Path=/gateway/ms-customer-management/**
+            - Path=/m1/ms-customer-management/**
           filters:
             - StripPrefix=2
             # - name: CircuitBreaker
@@ -46,6 +46,6 @@ spring:
         - id: ms-account-management
           uri: lb://ms-account-management
           predicates:
-            - Path=/gateway/ms-account-management/**
+            - Path=/m2/ms-account-management/**
           filters:
             - StripPrefix=2                
