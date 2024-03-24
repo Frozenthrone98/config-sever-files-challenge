@@ -16,21 +16,13 @@ resilience4j:
   circuitbreaker:
     configs:
       circuitBreakerCustomer:
-        slidingWindowSize: 8
-        failureRateThreshold: 60
+        slidingWindowSize: 10
+        failureRateThreshold: 30
         waitDurationInOpenState: 20s
         permittedNumberOfCallsInHalfOpenState: 8
-        slowCallDurationThreshold: 200ms
+        slowCallDurationThreshold: 1000ms
         slowCallRateThreshold: 50
         
     instances:
-      customer-cb:
+      customer-service-cb:
         base-config: circuitBreakerCustomer
-        
-  timelimiter:
-    configs:
-      timelimiterProduct:
-        timeoutDuration: 150ms
-    instances:
-      customer-cb:
-        base-config: timelimiterProduct  

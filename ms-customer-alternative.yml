@@ -9,14 +9,14 @@ eureka:
     hostname: localhost
 
 server:
-  port: 8085
+  port: 8086
 
 #Configuraciones de conexión a la bd
 spring:
   datasource:
     username: aldo
     password: mamani
-    url: jdbc:mysql://localhost:3306/customersdb
+    url: jdbc:mysql://localhost:3306/customersalternativedb
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database: mysql
