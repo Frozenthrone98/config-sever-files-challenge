@@ -4,21 +4,19 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
+      defaultZone: http://eureka-server:8761/eureka/
 
 server:
   port: 8095
 
-api.customer.path: http://localhost:8085/api/v1/customers/
+api.customer.path: http://customer-service:8085/api/v1/customers/
 
 #Configuraciones de conexión a la bd
 spring:
   datasource:
     username: aldo
     password: mamani
-    url: jdbc:postgresql://localhost/transactionsdb
+    url: jdbc:postgresql://postgres:5432/transactionsdb
     driver-class-name: org.postgresql.Driver
   jpa:
     database: postgresql

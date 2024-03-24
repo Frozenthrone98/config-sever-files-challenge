@@ -4,9 +4,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
+      defaultZone: http://eureka-server:8761/eureka/
 
 server:
   port: 8086
@@ -16,7 +14,7 @@ spring:
   datasource:
     username: aldo
     password: mamani
-    url: jdbc:mysql://localhost:3307/customersalternativedb
+    url: jdbc:mysql://mysql-alternative:3307/customersalternativedb
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database: mysql
