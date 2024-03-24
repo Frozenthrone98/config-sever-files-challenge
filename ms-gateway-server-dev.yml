@@ -32,7 +32,7 @@ spring:
     gateway:
       routes:
         - id : ms-customer-management
-          uri: lb://ms-customer-management
+          uri: lb://api/ms-customer-management
           predicates:
             - Path=/ms-customer-management/**
           filters:
@@ -44,14 +44,14 @@ spring:
             #     fallbackUri: forward:/ms-customer-alternative/**
 
         - id: ms-account-management
-          uri: lb://ms-account-management
+          uri: lb://api2/ms-account-management
           predicates:
             - Path=/ms-account-management/**
           filters:
             - StripPrefix=2 
 
         - id: ms-customer-alternative
-          uri: lb://ms-customer-alternative
+          uri: lb://api3/ms-customer-alternative
           predicates:
             - Path=/ms-customer-alternative/**
           filters:
