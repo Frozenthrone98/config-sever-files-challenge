@@ -32,9 +32,9 @@ spring:
     gateway:
       routes:
         - id : ms-customer-management
-          uri: lb://api/ms-customer-management
+          uri: lb://ms-customer-management
           predicates:
-            - Path=/ms-customer-management/**
+            - Path=/api/ms-customer-management/**
           filters:
             - StripPrefix=2
             # - name: CircuitBreaker
@@ -44,15 +44,15 @@ spring:
             #     fallbackUri: forward:/ms-customer-alternative/**
 
         - id: ms-account-management
-          uri: lb://api2/ms-account-management
+          uri: lb://ms-account-management
           predicates:
-            - Path=/ms-account-management/**
+            - Path=/api/ms-account-management/**
           filters:
             - StripPrefix=2 
 
         - id: ms-customer-alternative
-          uri: lb://api3/ms-customer-alternative
+          uri: lb://ms-customer-alternative
           predicates:
-            - Path=/ms-customer-alternative/**
+            - Path=/api/ms-customer-alternative/**
           filters:
             - StripPrefix=2            
