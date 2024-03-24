@@ -26,3 +26,19 @@ resilience4j:
     instances:
       customer-service-cb:
         base-config: circuitBreakerCustomer
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id : ms-customer-management
+          uri: lb://ms-customer-management
+          predicates:
+            - Path=/gateway/ms-customer-management/**
+          filters:
+            - StripPrefix=2
+            - name: CircuitBreaker
+              args:                              
+                name: customer-service-cb
+                statusCodes: 400, 401, 403, 500, 503, 504
+                fallbackUri: forward:/api/ms-customer-alternative/api/v1/customers
