@@ -11,6 +11,8 @@ eureka:
 server:
   port: 8095
 
+api.customer.path: http://localhost:8085/api/v1/customers/
+
 #Configuraciones de conexión a la bd
 spring:
   datasource:
