@@ -56,3 +56,9 @@ spring:
             - Path=/api/ms-customer-alternative/api/v1/customers
           filters:
             - StripPrefix=2            
+
+#Configuraciones de zipkin para visualizar la trazabilidad        
+management:
+  tracing:
+    sampling:
+      probability: 1.0            

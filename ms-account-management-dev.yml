@@ -26,4 +26,8 @@ spring:
     show-sql: false
     defer-datasource-initialization: true  
 
-  
+#Configuraciones de zipkin para visualizar la trazabilidad        
+management:
+  tracing:
+    sampling:
+      probability: 1.0
