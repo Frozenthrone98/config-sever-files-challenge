@@ -41,7 +41,7 @@ spring:
               args:                              
                 name: customer-service-cb
                 statusCodes: 400, 401, 403, 500, 503, 504
-                fallbackUri: forward:/api/ms-customer-alternative/**
+                fallbackUri: forward:/api/ms-customer-alternative/api/v1/customers
 
         - id: ms-account-management
           uri: lb://ms-account-management
@@ -53,6 +53,6 @@ spring:
         - id: ms-customer-alternative
           uri: lb://ms-customer-alternative
           predicates:
-            - Path=/api/ms-customer-alternative/**
+            - Path=/api/ms-customer-alternative/api/v1/customers
           filters:
             - StripPrefix=2            
