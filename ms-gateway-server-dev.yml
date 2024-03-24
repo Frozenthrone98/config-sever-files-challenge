@@ -41,4 +41,4 @@ spring:
               args:                              
                 name: customer-service-cb
                 statusCodes: 400, 401, 403, 500, 503, 504
-                fallbackUri: forward:/api/ms-customer-alternative/api/v1/customers
+                fallbackUri: forward:/ms-customer-alternative/**
