@@ -25,3 +25,19 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: false
     defer-datasource-initialization: true  
+
+# Circuit Breaker configuration
+resilience4j:
+  circuitbreaker:
+    configs:
+      circuitBreakerCustomer:
+        slidingWindowSize: 10
+        failureRateThreshold: 30
+        waitDurationInOpenState: 20s
+        permittedNumberOfCallsInHalfOpenState: 8
+        slowCallDurationThreshold: 200ms
+        slowCallRateThreshold: 50
+        
+    instances:
+      customer-service-cb:
+        base-config: circuitBreakerCustomer    
